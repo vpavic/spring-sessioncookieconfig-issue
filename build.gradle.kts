@@ -1,11 +1,11 @@
 plugins {
     base
     id("org.gretty") version "2.3.1" apply false
+    id("org.springframework.boot") version "2.1.2.RELEASE" apply false
 }
 
 subprojects {
-    apply(plugin = "war")
-    apply(plugin = "org.gretty")
+    apply(plugin = "java")
 
     configure<JavaPluginConvention> {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -16,7 +16,6 @@ subprojects {
     }
 
     dependencies {
-        "implementation"("org.springframework:spring-webmvc:5.1.4.RELEASE")
-        "providedCompile"("javax.servlet:javax.servlet-api:3.1.0")
+        "implementation"(platform("org.springframework.boot:spring-boot-dependencies:2.1.2.RELEASE"))
     }
 }
