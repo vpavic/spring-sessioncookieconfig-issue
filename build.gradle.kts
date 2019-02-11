@@ -16,6 +16,6 @@ subprojects {
     }
 
     dependencies {
-        "implementation"(platform("org.springframework.boot:spring-boot-dependencies:2.1.2.RELEASE"))
+        "implementation"(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     }
 }
